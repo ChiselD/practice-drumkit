@@ -12,12 +12,13 @@ const DRUMKIT = {
   l: "snare"
 }
 
-// function to check character and play sound
+// function to check character and play sound & animation
 
 function checkChar(obj, key) {
   if (key in obj) {
     let sound = new Audio("sounds/" + obj[key] + ".mp3");
     sound.play();
+    buttonAnimation(key);
   } else {
     return;
   }
@@ -35,3 +36,13 @@ BUTTONS.forEach((btn) => {
 document.addEventListener("keydown", function(e) {
   checkChar(DRUMKIT, e.key);
 });
+
+// animation
+
+function buttonAnimation(currentKey) {
+  let activeButton = document.querySelector("." + currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 80);
+}
