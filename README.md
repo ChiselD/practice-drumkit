@@ -1,0 +1,1 @@
+This project is a challenge from the Udemy course "The Complete 2022 Web Development Bootcamp", by Angela Yu. She retains all credit for the HTML and CSS files. The JS file is my own original solution to the challenge.
